@@ -23,40 +23,56 @@ import icon_star from "../../assets/image/ico-star.png";
 import dasol from "../../assets/image/dasol.png";
 import namjoo from "../../assets/image/namjoo.jpeg";
 import jerry from "../../assets/image/jerry.jpeg";
-import geesoo from "../../assets/image/geesoo.png";
 import bhyunnie from "../../assets/image/bhyunnie.png";
 import "../../styles/refactor.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { useEffect } from "react";
 
 const Main = () => {
+  useEffect(() => {});
+
   return (
     <div className="main">
-      <div className="swiper mySwiper banner">
-        <div className="swiper-wrapper">
-          <div className="swiper-slide banner">
-            <img src={banner_1} alt="" />
-          </div>
-          <div className="swiper-slide banner">
-            <img src={banner_2} alt="" />
-          </div>
-          <div className="swiper-slide banner">
-            <img src={banner_3} alt="" />
-          </div>
-          <div className="swiper-slide banner">
-            <img src={banner_4} alt="" />
-          </div>
-          <div className="swiper-slide banner">
-            <img src={banner_5} alt="" />
-          </div>
-          <div className="swiper-slide banner">
-            <img src={banner_6} alt="" />
-          </div>
-          <div className="swiper-slide banner">
-            <img src={banner_7} alt="" />
-          </div>
-        </div>
-
-        <div className="swiper-pagination "></div>
-      </div>
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={30}
+        slidesPerView={1}
+        centeredSlides={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        speed={500}
+        navigation={true}
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+      >
+        <SwiperSlide>
+          <img src={banner_1} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={banner_2} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={banner_3} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={banner_4} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={banner_5} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={banner_6} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={banner_7} alt="" />
+        </SwiperSlide>
+      </Swiper>
       <div className="category">
         <a href="index.jsp?boramMain=category/category.jsp?category=a">
           <span className="c01">
@@ -268,19 +284,6 @@ const Main = () => {
               5.0(25)
             </p>
           </span>
-
-          <span>
-            <a href="https://github.com/LLjay" target="_blank" rel="noreferrer">
-              <img className="main_profile" src={geesoo} alt="" />
-            </a>
-            <p className="name">이지수</p>
-            <p className="job">백엔드 개발자</p>
-            <p className="mark">
-              <img src={icon_star} alt="" />
-              5.0(28)
-            </p>
-          </span>
-
           <span>
             <a
               href="https://github.com/jerry0339"
